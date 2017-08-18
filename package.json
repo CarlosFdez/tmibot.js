@@ -1,0 +1,31 @@
+{
+  "name": "tmibot.js",
+  "version": "0.1.0",
+  "description": "A wrapper for tmi.js to easily create bot commands",
+  "keywords": [
+    "tmi",
+    "twitch",
+    "stream",
+    "bot"
+  ],
+  "main": "index.js",
+  "files": [
+    "lib",
+    "index.js",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CarlosFdez",
+  "license": "MIT",
+  "homepage": "https://github.com/CarlosFdez/tmibot.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CarlosFdez/tmibot.js"
+  },
+  "dependencies": {
+    "tmi.js": "^1.2.1"
+  },
+  "devDependencies": {}
+}

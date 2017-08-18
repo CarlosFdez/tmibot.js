@@ -1,0 +1,15 @@
+{
+    "tmi": {
+        "options": {
+            "debug": true
+        },
+        "connection": {
+            "reconnect": true
+        },
+        "identity": {
+            "username": "ItMeTheBot",
+            "password": "blah"
+        },
+        "channels": ["#ItsAChannel"]
+    }
+}
