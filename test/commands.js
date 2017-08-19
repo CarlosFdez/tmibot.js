@@ -15,7 +15,13 @@ describe("CommandGroupBase", function () {
         it("adds command to dictionary", () => {
             var base = new CommandGroupBase();
             base.addCommand("hello", () => {});
-            expect(base.commands["hello"]).to.not.be.null;
+            expect(base.commands).to.have.keys("hello");
+        });
+
+        it("allows commands to be referred by alias", () => {
+            var base = new CommandGroupBase();
+            base.addCommand("hello", () => {}, ["bonjour"]);
+            expect(base.commands).to.have.keys("hello", "bonjour");
         });
 
         it("fails if command already exists", () => {
@@ -23,13 +29,19 @@ describe("CommandGroupBase", function () {
             base.addCommand("hello", () => {});
             expect(() => base.addCommand("hello", () => {})).to.throw();
         });
+
+        it("fails if alias already exists", () => {
+            var base = new CommandGroupBase();
+            base.addCommand("hello", () => {});
+            expect(() => base.addCommand("hello2", () => {}, ["hello"])).to.throw();
+        });
     });
 
     describe("filtered", () => {
         it("allows commands to be added to the base", () => {
             var base = new CommandGroupBase();
             base.filtered().addCommand("hello", () => {});
-            expect(base.commands["hello"]).to.not.be.null;
+            expect(base.commands).to.have.keys("hello");
         });
 
         it("allows group commands to be added to the base", () => {
@@ -37,8 +49,8 @@ describe("CommandGroupBase", function () {
             var filter = base.filtered();
             var group = filter.addGroup("group");
             group.addCommand("hello", () => {});
-            expect(base.commands["group"]).to.not.be.null;
-            expect(base.commands["group"].commands["hello"]).to.not.be.null;
+            expect(base.commands).to.have.keys("group");
+            expect(base.commands["group"].commands).to.have.keys("hello");
         })
 
         it("adds checks to commands added through it", () => {
