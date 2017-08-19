@@ -15,7 +15,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
   },
   "author": "CarlosFdez",
   "license": "MIT",
@@ -27,5 +27,9 @@
   "dependencies": {
     "tmi.js": "^1.2.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.0"
+  }
 }
