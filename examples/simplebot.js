@@ -8,16 +8,18 @@ var config = require("./config.json");
 var client = new tmi.client(config.tmi);
 var bot = new tmibot.bot(client, { prefix: '!' });
 
-bot.addCommand("ping", (ctx, args) => {
-    ctx.reply("pong");
-});
-
 bot.addCommand("hello", (ctx, args) => {
     ctx.reply("Hello " + ctx.author.name);
 });
 
 bot.addCommand("echo", (ctx, args) => {
     ctx.reply(args.toString());
-})
+});
+
+var group = bot.addGroup("group");
+
+group.addCommand("hello", (ctx, args) => {
+    ctx.reply("Hello " + ctx.author.name + " from group");
+});
 
 client.connect();

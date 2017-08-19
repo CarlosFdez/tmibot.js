@@ -66,7 +66,7 @@ describe("StringView", function() {
         it ("skips if value matches", () => {
             var view = new StringView("test");
             var skipValue = view.skipValue("te");
-            expect(view.toString()).to.equal("st", "expected he to be skipped");
+            expect(view.toString()).to.equal("st", "expected 'te' to be skipped");
             expect(skipValue).to.be.true;
         });
     })
