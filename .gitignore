@@ -1,6 +1,7 @@
 # extras (lazyness)
 config.json
 package-lock.json
+.vscode/
 
 # Logs
 logs
