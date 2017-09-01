@@ -1,10 +1,8 @@
 # TMIBot.js
 
-A javascript library that wraps over [tmi.js](https://github.com/tmijs/tmi.js) to support bot commands. This is really new and highly subject to change.
+A javascript library that wraps over [tmi.js](https://github.com/tmijs/tmi.js) to support bot command parsing. This is really new and highly subject to change. Some ideas came from various discord bot libraries (mostly discord.py).
 
-## Why a new library
-
-TMI.js is does not support command parsing. Some ideas came from various discord bot libraries (mostly discord.py).
+I wrote this mostly for my own use, but if you want feel free to use it. You can contact me on [Twitter](https://twitter.com/MeSoSupe) if you need anything.
 
 ## How to install
 
@@ -37,3 +35,7 @@ client.connect();
 ```
 
 More examples are in the examples/ folder.
+
+## Documentation
+
+Unfortunately there isn't any at this time. However, I did write JSDoc comments, so an editor with intelligent code completion is enough. I personally use [Visual Studio Code](https://code.visualstudio.com/).
